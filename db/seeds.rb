@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Flat.destroy_all
+
+5.times do
+  Flat.create(name: Faker::Beer.name, address: Faker::Address.street_address,
+            url_image: Faker::LoremFlickr.image(search_terms: ['romms']),
+            description: Faker::Quote.famous_last_words,
+            price_per_night: (10..150).to_a.sample, number_of_guests: (1..6).to_a.sample)
+  end
+
+  puts "db ok"
