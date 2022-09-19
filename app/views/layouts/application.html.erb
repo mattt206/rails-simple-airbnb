@@ -28,7 +28,11 @@
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Search", "#", class: "nav-link" %>
+
+        <form class="flex my-1 my-lg-0">
+          <input class="me-1 p-1 rounded border border-secondary" name="query" type="search" placeholder="Search" aria-label="Search" value="">
+          <button class="btn btn-outline-success my-2 my-sm-0 mx-2" type="submit">Search</button>
+        </form>
           </li>
           <li class="nav-item active">
             <%= link_to "new Flat", new_flat_path, class: "btn btn-primary" %>

@@ -11,6 +11,10 @@
     <p> Description: <%= flat.description %></p>
     <p> $ <%= flat.price_per_night %></p>
     <p> guests: <%= flat.number_of_guests %></p>
-    <%= link_to 'More info', flat_path(flat)  %>
+    <div>
+      <%= link_to 'More info', flat_path(flat), class: "btn btn-outline-info" %>
+      <%= link_to 'Edit', edit_flat_path(flat), class: "btn btn-outline-info" %>
+      <%= link_to 'Delete', flat_path(flat), class: "btn btn-outline-info", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </div>
   </div>
 <% end  %>

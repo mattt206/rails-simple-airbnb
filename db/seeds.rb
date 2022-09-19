@@ -9,7 +9,7 @@ Flat.destroy_all
 
 5.times do
   Flat.create(name: Faker::Beer.name, address: Faker::Address.street_address,
-            url_image: Faker::LoremFlickr.image(search_terms: ['romms']),
+            url_image: Faker::LoremFlickr.image(search_terms: ['house']),
             description: Faker::Quote.famous_last_words,
             price_per_night: (10..150).to_a.sample, number_of_guests: (1..6).to_a.sample)
   end
